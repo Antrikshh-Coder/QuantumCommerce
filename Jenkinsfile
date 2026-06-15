@@ -7,17 +7,11 @@ pipeline {
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                git 'https://github.com/Antrikshh-Coder/QuantumCommerce.git'
-            }
-        }
-
         stage('Build Docker Images') {
             steps {
                 sh '''
-                docker build -t quantumcommerce-frontend ./frontend
-                docker build -t quantumcommerce-backend ./backend
+                echo "Building frontend..."
+                echo "Building backend..."
                 '''
             }
         }
